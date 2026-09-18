@@ -1,0 +1,14 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    ports:
+      - "5433:5432"
+    environment:
+      POSTGRES_USER: locker
+      POSTGRES_PASSWORD: locker
+      POSTGRES_DB: locker
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U locker -d locker"]
+      interval: 2s
+      timeout: 3s
+      retries: 15

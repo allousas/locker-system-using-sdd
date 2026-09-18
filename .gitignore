@@ -1,0 +1,11 @@
+node_modules/
+dist/
+coverage/
+.env
+*.js.map
+.idea/
+.DS_Store
+*.tsbuildinfo
+
+# Personal permission grants and absolute local paths — the shared skills in .claude/skills/ are committed.
+.claude/settings.local.json
