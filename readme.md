@@ -1,9 +1,12 @@
 # Locker system using spec driven development
 
 A small locker service — lock and unlock resources with a 4-digit code — that exists mainly as a
-test for **my own take on spec driven development** ([spec anchored version](https://www.rushis.com/spec-first-spec-anchored-spec-as-truth-the-three-levels-of-spec-driven-development/)), where the spec is a living artifact that evolves with the system and is mechanically enforced against the code.
-Second motive: getting up to speed with TypeScript. I'm not an expert in the language — this is me
-pairing with Claude, so treat the code as a work in progress rather than a reference.
+test for **spec driven development** ([spec anchored version](https://www.rushis.com/spec-first-spec-anchored-spec-as-truth-the-three-levels-of-spec-driven-development/)), where the spec is a living artifact that evolves with the system and is mechanically enforced against the code.
+
+> **Disclaimer:** this is under active development and exists as a personal learning exercise — me
+> getting up to speed with TypeScript and with my own take on spec driven development. It is not a
+> production service, a reference implementation, or a stable API. Feel free to use it, borrow from
+> it, or fork it. Also, of course pairing with **Claude**
 
 [sdd]: https://www.rushis.com/spec-first-spec-anchored-spec-as-truth-the-three-levels-of-spec-driven-development/
 
