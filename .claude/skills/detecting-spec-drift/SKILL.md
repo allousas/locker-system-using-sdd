@@ -38,6 +38,8 @@ Walk each numbered requirement, contract row, rule, and acceptance criterion. Fo
 
 Also verify the frontmatter tells the truth: `status` must match reality (`spec-rules.md` rule 10), and a spec claiming `not-implemented` while the code implements it is itself a finding.
 
+`status: partially-implemented` is a declared gap, not a lie: the spec text is authoritative and the code is known to lag. Still check it, but compare against the deltas listed in `### Notes` — an outstanding delta that is now implemented means the status should move to `implemented`, and a gap found that is *not* on that list is an undeclared finding like any other. A spec claiming `implemented` while the code lags is stale metadata that should have been `partially-implemented`.
+
 ### STEP 4: Classify each finding
 
 Naming the *kind* of drift matters because the fix differs sharply between them:
@@ -45,6 +47,7 @@ Naming the *kind* of drift matters because the fix differs sharply between them:
 | Kind | Meaning | Usual fix |
 |------|---------|-----------|
 | **Missing** | Spec requires it; code lacks it | Implement it |
+| **Declared pending** | Spec requires it; code lacks it; already listed as a delta under a `partially-implemented` spec | Implement it — report it, but as known work, not a new discovery |
 | **Undeclared** | Code does it; no spec covers it | Extend the spec, or delete the behaviour |
 | **Contradictory** | Both exist but disagree (route, status code, event name, field type) | A decision is needed — do not guess |
 | **Untested** | Acceptance criterion has no asserting test | Add the test |

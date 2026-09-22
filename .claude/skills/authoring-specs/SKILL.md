@@ -50,12 +50,24 @@ Rules:
 - File naming: `docs/specs/<feature-name>.md` (kebab-case)
 - Follow the template and rules from `spec-rules.md` exactly
 
+### STEP 4b: Close the gap that prompted the change
+
+Apply `spec-rules.md` rules 11 and 12:
+
+- Write the missing behaviour into the spec **body**, now. A note saying it *should* say 204 is not a spec that says 204 — notes record only what the code still owes.
+- If the change touches state, a contract or a decision another spec governs, edit that spec in the same pass. Never write "spec X is updated to match" unless you just did.
+- Set `status` on every spec touched: `implemented` if the code already behaves that way, otherwise `partially-implemented` plus one `### Notes` line per outstanding delta.
+
+`partially-implemented` is the normal landing state here; it tells `detecting-spec-drift` the gap is declared, not newly found, and stays until the code catches up.
+
 ## STEP 5: Review and confirmation
 
 - Present the full spec and any index changes to the user
 - Highlight:
     - New sections
     - Modified sections
+    - Every other spec touched, and why
+    - Any `status` transition, and for `partially-implemented` the deltas the code still owes
 
 - Do NOT proceed to implementation until the user explicitly approves
 

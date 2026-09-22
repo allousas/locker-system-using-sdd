@@ -54,6 +54,8 @@ Verify:
 
 **If compliant:** confirm the change satisfies the spec and list which acceptance criteria are covered.
 
+If the spec is `status: partially-implemented` and this change closes one of the deltas listed under its `### Notes`, say so and tell the user the spec needs its bookkeeping settled: delete that delta line, tick the acceptance criteria the change now satisfies, and — once no deltas remain — move `status` to `implemented` and bump `updated`. Nothing else flips that status, so an unclosed delta stays `partially-implemented` indefinitely and the spec stops describing reality. Route the edit through `/authoring-specs`; do not rewrite the spec here.
+
 **If not compliant:** list each violation with:
 
 - The spec rule or criterion that is violated
